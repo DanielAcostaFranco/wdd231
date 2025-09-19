@@ -59,11 +59,9 @@
   --bs-font-serif: "Times New Roman", Times, serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
-  );
+  --bs-gradient: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0));
   --bs-body-font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -86,11 +84,10 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-/* Global styles */
-
 * {
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
 }
@@ -110,7 +107,6 @@ a:hover {
   color: var(--bs-link-hover-color);
 }
 
-/* Skip links styling */
 .skip-links ul {
   list-style-type: none;
   margin: 0;
@@ -131,13 +127,12 @@ a:hover {
   z-index: 9999;
 }
 
-/* Title and logo styling */
-
 .site-title {
   display: flex;
   align-items: center;
 }
-.site-title > span {
+
+.site-title>span {
   font-size: 1rem;
   margin-left: 0.3em;
 }
@@ -152,8 +147,6 @@ a:hover {
   border-right: 13px solid transparent;
 }
 
-/* Utility styles */
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -167,7 +160,114 @@ a:hover {
   overflow: hidden;
 }
 
-svg {
-  background-color: var(--bs-black);
+.global-header {
+  background-color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.global-header span {
+  color: white;
+}
+
+.global-header__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.global-header__right .icon {
+  width: 30px;
+  height: 30px;
   fill: white;
+}
+
+#global-nav-toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0;
+}
+
+#global-nav-toggle .icon {
+  width: 30px;
+  height: 30px;
+}
+
+#hero-banner {
+  position: relative;
+}
+
+#hero-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+}
+
+#hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+#hero-text span {
+  font-size: 1rem;
+}
+
+#park-header {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#park-header p {
+  color: white;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.icon-group .icon {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  background-color: transparent;
+}
+
+.icon-group p {
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+/* Reset for SVG icons */
+svg {
+  fill: white;
+}
+
+.site-title .logo svg {
+  fill: black;
+}
+
+.disclaimer {
+  margin: 20px;
 }

@@ -1,98 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Park Name]</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="js/main.js"></script>
-  </head>
-  <body>
-    <p class="disclaimer">
-      This is not a real NPS website. It is an educational exercise. If you
-      landed here by accident, to find the real website visit
-      <a href="parkUrl">[park name]</a>
-    </p>
-    <div class="skip-links" aria-label="short-cut links" role="navigation">
-      <ul>
-        <li>
-          <a
-            href="#global-nav-toggle"
-            aria-label="Skip to global NPS navigation"
-            >Skip to global NPS navigation</a
-          >
-        </li>
-        <li>
-          <a href="#local-nav" aria-label="Skip to this park navigation"
-            >Skip to this park navigation</a
-          >
-        </li>
-        <li>
-          <a href="#main" aria-label="Skip to the main content"
-            >Skip to the main content</a
-          >
-        </li>
-        <li>
-          <a
-            href="#park-footer"
-            aria-label="Skip to this park information section"
-            >Skip to this park information section</a
-          >
-        </li>
-      </ul>
-    </div>
-    <header>
-      <section class="global-header">
-        <a href="index.html" class="site-title"
-          ><span class="logo" role="presentation"></span>
-          <span>National Park Service</span></a
-        >
-        <div class="global-header__right">
-          <a class="search-icon" href="#park-footer">
-            <svg class="icon">
-              <use xlink:href="/images/sprite.symbol.svg#search"></use>
-            </svg>
-            <span class="visually-hidden">Search</span>
-          </a>
-          <button id="global-nav-toggle">
-            <svg class="icon">
-              <use xlink:href="/images/sprite.symbol.svg#menu"></use>
-            </svg>
-            <span class="visually-hidden">Open</span> Menu
-          </button>
-        </div>
-        <nav class="global-nav">
-          <h2 class="global-nav__section-heading">Explore this Park</h2>
-          <ul class="global-nav__list">
-            <li>
-              <div class="global-nav__split-button">
-                <a href="#">Plan Your Visit</a>
-                <button class="global-nav__split-button__toggle">
-                  <span class="visually-hidden"
-                    >Toggle submenu for Plan Your Visit</span
-                  >
-                  <svg class="icon" role="presentation" focusable="false">
-                    <use xlink:href="/images/sprite.symbol.svg#arrow"></use>
-                  </svg>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </section>
-      <section id="park-header">
-        <a href="#">
-          <span>Info</span>
-          <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#info"></use>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yellowstone National Park</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <p class="disclaimer">
+    This is not a real NPS website. It is an educational exercise. If you
+    landed here by accident, to find the real website visit
+    <a href="parkUrl">[park name]</a>
+  </p>
+
+  <header>
+    <section class="global-header">
+      <a href="index.html" class="site-title">
+        <span class="logo" role="presentation"></span>
+        <span>National Park Service</span>
+      </a>
+      <div class="global-header__right">
+        <a class="search-icon" href="#park-footer">
+          <svg class="icon">
+            <use xlink:href="/images/sprite.symbol.svg#search"></use>
           </svg>
+          <span class="visually-hidden">Search</span>
         </a>
+        <button id="global-nav-toggle">
+          <svg class="icon">
+            <use xlink:href="/images/sprite.symbol.svg#menu"></use>
+          </svg>
+          <span class="visually-hidden">Open</span>MENU
+        </button>
+      </div>
+    </section>
+
+    <div id="hero-banner">
+      <img src="https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg"
+        alt="Yellowstone National Park">
+      <div id="hero-text">
+        <h1>Yellowstone</h1>
+        <span>National Park</span>
+        <span>ID, MT, WY</span>
+      </div>
+    </div>
+
+    <section id="park-header">
+      <a href="#" class="icon-group">
+        <p>Info</p>
+        <svg class="icon" role="presentation" focusable="false">
+          <use xlink:href="/images/sprite.symbol.svg#info"></use>
+        </svg>
+      </a>
+      <a href="#" class="icon-group">
+        <p>Alerts</p>
         <svg class="icon" role="presentation" focusable="false">
           <use xlink:href="/images/sprite.symbol.svg#alert"></use>
         </svg>
-      </section>
-    </header>
-    <main id="main"></main>
-    <footer id="park-footer"></footer>
-  </body>
+      </a>
+      <a href="#" class="icon-group">
+        <p>Maps</p>
+        <svg class="icon" role="presentation" focusable="false">
+          <use xlink:href="/images/sprite.symbol.svg#location"></use>
+        </svg>
+      </a>
+      <a href="#" class="icon-group">
+        <p>Calendar</p>
+        <svg class="icon" role="presentation" focusable="false">
+          <use xlink:href="/images/sprite.symbol.svg#calendar"></use>
+        </svg>
+      </a>
+      <a href="#" class="icon-group">
+        <p>Fees</p>
+        <svg class="icon" role="presentation" focusable="false">
+          <use xlink:href="/images/sprite.symbol.svg#fee-22"></use>
+        </svg>
+      </a>
+    </section>
+  </header>
+
+  <main id="main"></main>
+  <footer id="park-footer"></footer>
+</body>
+
 </html>
