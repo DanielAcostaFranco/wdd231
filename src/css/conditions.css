@@ -1,0 +1,68 @@
+:root {
+    --alert-closure: #cb2027;
+    --alert-caution: #ed7e31;
+    --alert-information: #2451a9;
+    --alert-danger: #720f04;
+}
+
+main {
+    padding: 4em;
+}
+
+details {
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 0.5em 3em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: em;
+}
+
+.alert-information {
+    color: var(--alert-information);
+}
+
+.alert-danger {
+    color: var(--alert-danger);
+}
+
+.alert-closure {
+    color: var(--alert-closure);
+}
+
+.alert-caution {
+    color: var(--alert-caution);
+}
+
+
+.alerts>ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alert {
+    margin: 0.5rem;
+    padding: 0.5rem 0 0.8rem 0;
+    display: flex;
+    gap: 1em;
+    border-bottom: 1px solid var(--bs-grey-3);
+}
+
+.alert h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert svg {
+    height: 30px;
+    width: 30px;
+    margin: 0.25em;
+    flex: 0 0 auto;
+}
