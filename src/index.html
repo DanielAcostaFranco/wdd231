@@ -8,8 +8,8 @@
     content="This is website about National Parks, it gives information about the services provided." />
   <meta name="keywords" content="national parks, yellowstone, activities, parks, yosemite" />
   <title>Yellowstone National Park</title>
-  <link rel=" stylesheet" href="css/style.css" />
-  <script type="module" src="js/main.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -25,24 +25,39 @@
         <span class="logo" role="presentation"></span>
         <span>National Park Service</span>
       </a>
+
       <div class="global-header__right">
-        <a class="search-icon" href="#park-footer">
+        <a class="search-icon" href="#park-footer" aria-label="Search">
           <svg class="icon">
             <use xlink:href="/images/sprite.symbol.svg#search"></use>
           </svg>
           <span class="visually-hidden">Search</span>
         </a>
-        <button id="global-nav-toggle">
-          <svg class="icon">
-            <use xlink:href="/images/sprite.symbol.svg#menu"></use>
-          </svg>
-          <span class="visually-hidden">Open</span>MENU
+
+        <!-- Botón del menú con estados accesibles -->
+        <button id="global-nav-toggle" aria-expanded="false" aria-controls="global-nav">
+
+          <span class="state-closed"><svg class="icon">
+              <use xlink:href="/images/sprite.symbol.svg#menu"></use>
+            </svg></span>
+
+          <span class="state-open">
+            <img src="images/Close-256.png" alt=" close menu" class="icon-close">
+          </span>
         </button>
       </div>
     </section>
 
+    <!-- Menú principal: añadimos class="global-nav" para que apliquen estilos -->
+    <nav id="global-nav" class="global-nav" aria-label="Primary" hidden>
+      <ul class="global-nav__list">
+        <li><a class="global-nav__item" href="#main">Plan your visit</a></li>
+
+      </ul>
+    </nav>
+
     <div id="hero-banner">
-      <img src="">
+      <img src="" alt="" />
       <div id="hero-text">
         <h1>Yellowstone</h1>
         <span>National Park</span>
@@ -88,10 +103,9 @@
     <section class="intro"></section>
     <section class="info"></section>
   </main>
+
   <footer id="park-footer">
   </footer>
-
-
 </body>
 
 </html>

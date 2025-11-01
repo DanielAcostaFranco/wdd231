@@ -358,3 +358,56 @@ a {
     font-size: 1rem;
   }
 }
+
+
+
+#global-nav {
+  position: static;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: left;
+  padding: 1rem 0;
+  display: none;
+}
+
+#global-nav.is-open {
+  display: block;
+}
+
+#global-nav .global-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#global-nav a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+#global-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== BOTÓN MENU → CLOSE ===== */
+#global-nav-toggle .state-open {
+  display: none;
+}
+
+#global-nav-toggle[aria-expanded="true"] .state-open {
+  display: inline-flex;
+}
+
+#global-nav-toggle[aria-expanded="true"] .state-closed {
+  display: none;
+}
+
+.icon-close {
+  width: 30px;
+
+}
