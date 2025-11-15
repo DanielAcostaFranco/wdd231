@@ -1,0 +1,24 @@
+body {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+img {
+  max-width: 100%;
+}
+
+.logoImg {
+  border-radius: 50% 25%;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  background-color: coral;
+
+}
+
+.product {
+  border: 5px solid rgb(198, 190, 190);
+}
