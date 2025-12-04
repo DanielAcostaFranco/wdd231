@@ -62,7 +62,7 @@ export function alertTemplate(alert) {
 
 export function visitorCenterTemplate(center) {
   return `<li class="visitor-center">
-  <h4>${center.name}</h4>
+  <h4><a href="${center.url}">${center.name}</a></h4>
   <p>${center.description}</p>
   <p>${center.directionsInfo}</p>
   </li>`;
