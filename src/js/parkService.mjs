@@ -6,7 +6,7 @@ const apiKey = import.meta.env?.VITE_NPS_API_KEY || "";
 // ====================================================================
 // GLOBAL SYSTEM: READS ?park=xxx FROM URL AUTOMATICALLY
 // ====================================================================
-export const DEFAULT_PARK_CODE = "yose";
+export const DEFAULT_PARK_CODE = "yell";
 let currentParkCode = DEFAULT_PARK_CODE;
 
 if (typeof window !== "undefined" && window.__OVERRIDE_PARK_CODE__) {
