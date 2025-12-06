@@ -4,27 +4,30 @@ import { getParkData, getInfoLinks } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 
-// AÑADE ESTO en la parte superior de tu archivo main.js (debajo de los "imports")
 
+// =================================================================================
+// NUEVA FUNCIÓN CLAVE: Lee la URL y extrae el código del parque
+// =================================================================================
 function getParkCodeFromURL() {
-    // 1. Lee la ruta completa (ej: /yosemite o /everglades)
+    // 1. Lee la ruta completa (ej: /yosemite o /acadi/about)
     const path = window.location.pathname;
 
     // 2. Divide la ruta por las barras (/)
     const segments = path.split('/');
 
-    // 3. Devuelve el último pedazo, que es el código del parque (ej: "yosemite")
+    // 3. Devuelve el último pedazo de la ruta, que es el código del parque (ej: "yosemite")
     let parkCode = segments[segments.length - 1];
 
-    // Si la ruta está vacía (solo /), devuelve algo que tu código entienda como "Home"
-    if (parkCode === "") {
-        // Asume que tu código usa un código de parque por defecto (ej: "home" o "acad") 
-        // Si no sabes cuál es el código por defecto, tendrás que investigarlo.
-        return 'acad'; // Reemplaza 'acad' si tu código usa otro por defecto
+    // Si la ruta está vacía (es decir, el usuario fue a misitio.com/), 
+    // usa un código por defecto (ej: 'acad'). Ajusta 'acad' si usas otro código.
+    if (parkCode === "" || parkCode === "index.html") {
+        return 'acad';
     }
 
     return parkCode;
 }
+// =================================================================================
+
 
 function setParkIntro(data) {
     const introEl = document.querySelector(".intro");
@@ -46,15 +49,24 @@ function setParkInfoLinks(data) {
 
 async function initContent() {
     try {
+        // ------------------------------------------------------------------
+        // MODIFICACIÓN CLAVE: Llama a la nueva función y pasa el código
+        // ------------------------------------------------------------------
+
+        // Obtiene el código del parque de la URL (ej: 'yosemite')
         const parkCode = getParkCodeFromURL();
 
+        // Pasa el código a getParkData(). El servicio ahora usará este código.
         const parkData = await getParkData(parkCode);
+
+        // La lógica restante permanece igual
         const links = getInfoLinks(parkData.images);
+
+        // ------------------------------------------------------------------
 
         setHeaderFooter(parkData);
         setParkIntro(parkData);
         setParkInfoLinks(links);
-
     } catch (err) {
         console.error("Error loading park data:", err);
     }
@@ -63,5 +75,6 @@ async function initContent() {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("main.js loaded and DOM ready");
 
+    // Llama a la función principal al cargar la página
     initContent();
 });
