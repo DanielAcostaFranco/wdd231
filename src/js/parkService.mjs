@@ -55,16 +55,18 @@ async function fetchNPS(endpoint) {
 // PUBLIC FUNCTIONS (NO FALLBACKS)
 // ====================================================================
 
-
-if (!code) {
-  code = getCurrentParkCode();
+export async function getParkData() {
+  const code = getCurrentParkCode();
   const result = await fetchNPS(`parks?parkCode=${code}&limit=1`);
 
   if (result.data && result.data.length > 0) {
+    return result.data[0];
   }
 
+  // Since fallback is not an option, throw an error if data is missing
   throw new Error(`Park data for code ${code} not found in API response.`);
 }
+
 export async function getParkAlerts() {
   const code = getCurrentParkCode();
   const result = await fetchNPS(`alerts?parkCode=${code}&limit=50`);
