@@ -61,7 +61,6 @@ if (!code) {
   const result = await fetchNPS(`parks?parkCode=${code}&limit=1`);
 
   if (result.data && result.data.length > 0) {
-    return result.data[0];
   }
 
   throw new Error(`Park data for code ${code} not found in API response.`);
