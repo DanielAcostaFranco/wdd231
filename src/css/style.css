@@ -374,6 +374,7 @@ a {
 
 #global-nav.is-open {
     display: block;
+    padding: 30px;
 }
 
 #global-nav .global-nav__list {
