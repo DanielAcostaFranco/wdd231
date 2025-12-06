@@ -12,6 +12,19 @@
     <link rel="stylesheet" href="css/visitor-center.css" />
     <script type="module" src="js/visitor-center.js" defer></script>
     <script type="module" src="js/main.js" defer></script>
+    <script>
+        // Esto lee los datos de la URL
+        const params = new URLSearchParams(window.location.search);
+        const park = params.get("park");
+        const id = params.get("id");
+
+        console.log("Park:", park);
+        console.log("ID:", id);
+
+        // Aquí puedes mostrar algo en la página
+        document.body.innerHTML += `<h1>Park: ${park}, ID: ${id}</h1>`;
+    </script>
+
 </head>
 
 <body>
