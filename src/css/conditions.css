@@ -12,7 +12,7 @@ main {
 details {
     border: 1px solid #aaaaaa;
     border-radius: 5px;
-    padding: 0.5em 3em 0;
+    padding: 0.5em 0.5em 0;
 }
 
 summary {

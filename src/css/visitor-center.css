@@ -1,0 +1,247 @@
+:root {
+    --alert-closure: #cb2027;
+    --alert-caution: #ed7e31;
+    --alert-information: #2451a9;
+    --alert-danger: #720f04;
+}
+
+main {
+    padding: 4em;
+}
+
+details {
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    /* CORRECCIÓN: Ajuste del padding para eliminar la sangría excesiva en el contenido de <details> */
+    padding: 0.5em 0.5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: em;
+}
+
+.alert-information {
+    color: var(--alert-information);
+}
+
+.alert-danger {
+    color: var(--alert-danger);
+}
+
+.alert-closure {
+    color: var(--alert-closure);
+}
+
+.alert-caution {
+    color: var(--alert-caution);
+}
+
+
+.alerts>ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alert {
+    margin: 0.5rem;
+    padding: 0.5rem 0 0.8rem 0;
+    display: flex;
+    gap: 1em;
+    border-bottom: 1px solid var(--bs-grey-3);
+}
+
+.alert h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert svg {
+    height: 30px;
+    width: 30px;
+    margin: 0.25em;
+    flex: 0 0 auto;
+}
+
+/* ========================================================= */
+/* Estilos para la sección de VISITOR CENTERS (conditions.html) */
+/* ========================================================= */
+
+.visitor ul {
+    list-style: none;
+    margin-top: 0.5em;
+    padding-left: 0;
+}
+
+.visitor-center {
+    padding-left: 0.5em;
+}
+
+/* ========================================================= */
+/* Estilos para la GALERÍA CON TAMAÑO FIJO Y WRAP */
+/* ========================================================= */
+
+.vc-name {
+    border-bottom: 1px solid var(--bs-gray-400);
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.vc-name svg {
+    width: 1em;
+    height: 1em;
+}
+
+.vc-info figure {
+    margin: 1em 3em;
+}
+
+.vc-info figcaption {
+    font-size: 0.8em;
+}
+
+.vc-info figcaption>span {
+    display: block;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.vc-details-list svg,
+.vc-gallery svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 1rem;
+    fill: black;
+}
+
+.vc-details-list summary {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+
+#vcAmenities ul {
+    list-style: none;
+}
+
+#vcAmenities li {
+    margin-bottom: 1em;
+}
+
+.vc-gallery>h2 {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+}
+
+/* Contenedor de la galería: permite envolver */
+.vc-thumbnail-gallery {
+    display: flex;
+    gap: 1.5em;
+    /* CLAVE: Permite pasar a la línea de abajo en pantallas pequeñas */
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    width: 100%;
+}
+
+.vc-thumbnail-gallery .thumb-item {
+    /* CLAVE: Fija el ancho base. No permite crecer (0) ni encoger (0/1) más allá de lo necesario. */
+    /* Usamos 'auto' como base para que se adapte mínimamente, pero con un ancho definido por 'width' */
+    flex: 0 0 auto;
+    /* Definimos el ancho fijo deseado para el contenedor de la imagen: */
+    width: 300px;
+    margin: 0;
+    text-align: center;
+}
+
+.vc-thumbnail-gallery .thumb-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.vc-thumbnail-gallery .thumb-item figcaption {
+    margin-top: 0.5em;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* ========================================================= */
+
+
+.vc-gallery ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.vc-gallery img {
+    width: 265px;
+    height: 265px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.vc-details-list summary::marker,
+.vc-details-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.vc-details-list summary::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url("../images/arrow.svg");
+    background-size: 1.25rem 1.25rem;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.vc-details-list details[open]>summary::after {
+    transform: rotate(180deg);
+}
+
+.vc-details-list summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    background: #f8f8f8;
+    transition: background 0.2s ease;
+}
+
+.vc-details-list summary:hover {
+    background: #f0f0f0;
+}
+
+.vc-details-list summary .dropdown-arrow {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    color: #2c5234;
+}
+
+.vc-details-list details[open] .dropdown-arrow {
+    transform: rotate(90deg);
+}
+
+.vc-details-list summary::-webkit-details-marker,
+.vc-details-list summary::marker {
+    display: none;
+}

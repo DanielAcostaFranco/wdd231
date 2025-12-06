@@ -5,6 +5,7 @@ import setHeaderFooter from "./setHeaderFooter.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 
 
+
 function setParkIntro(data) {
     const introEl = document.querySelector(".intro");
     if (!introEl) return;
@@ -25,6 +26,8 @@ function setParkInfoLinks(data) {
 
 async function initContent() {
     try {
+        // Calling getParkData reads the URL parameter (if it exists)
+        // and sets the park context in parkService.mjs.
         const parkData = await getParkData();
         const links = getInfoLinks(parkData.images);
 
@@ -35,8 +38,6 @@ async function initContent() {
         console.error("Error loading park data:", err);
     }
 }
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("main.js loaded and DOM ready");
